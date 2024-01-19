@@ -1,6 +1,15 @@
 "use client"
 import React, { useState } from 'react';
-import Modal from '../components/Modal';
+import Modal from '@components/Modal';
+import styles from "./page.module.css";
+
+
+import ProductSlider from '../components/ProductSlider';
+
+const products = [
+  { id: 1, image: '/spectre1.png' },
+  { id: 2, image: '/spectre1.png'},
+];
 
 const ProductPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,9 +24,10 @@ const ProductPage = () => {
 
   return (
     <div>
-      <h1>Nombre del Producto</h1>
-      <p>Descripción del producto.</p>
-      <p>Precio: $XX.XX</p>
+
+      <h1>Sceptre Monitor curvo para juegos de 24.5 pulgadas</h1>
+      <p>$800.000</p>
+      <ProductSlider classname={styles.productSlide} products={products} />
 
       <button onClick={handlePaymentClick}>Pagar con tarjeta de crédito</button>
 
