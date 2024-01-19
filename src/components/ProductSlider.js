@@ -1,9 +1,9 @@
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ProductSlider = ({ products }) => {
   const settings = {
@@ -23,18 +23,20 @@ const ProductSlider = ({ products }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {products.map((product) => (
-        <div key={product.id} className="product-slide">
-          <Image
-          src={product.image}
-          alt="Imagen de producto"
-          width={214}
-          height={200}
-        />
-        </div>
-      ))}
-    </Slider>
+    <>
+      <Slider {...settings}>
+        {products.map((product) => (
+          <div key={product.id} className="productSlide">
+            <Image
+              src={product.image}
+              alt="Imagen de producto"
+              width={214}
+              height={200}
+            />
+          </div>
+        ))}
+      </Slider>
+    </>
   );
 };
 

@@ -1,14 +1,13 @@
-"use client"
-import React, { useState } from 'react';
-import Modal from '@components/Modal';
+"use client";
+import React, { useState } from "react";
+import Modal from "@components/Modal";
 import styles from "./page.module.css";
 
-
-import ProductSlider from '../components/ProductSlider';
+import ProductSlider from "../components/ProductSlider";
 
 const products = [
-  { id: 1, image: '/spectre1.png' },
-  { id: 2, image: '/spectre1.png'},
+  { id: 1, image: "/spectre1.png" },
+  { id: 2, image: "/spectre1.png" },
 ];
 
 const ProductPage = () => {
@@ -23,13 +22,19 @@ const ProductPage = () => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <span>Inicio / Productos / Pc</span>
 
-      <h1>Sceptre Monitor curvo para juegos de 24.5 pulgadas</h1>
-      <p>$800.000</p>
-      <ProductSlider classname={styles.productSlide} products={products} />
-
-      <button onClick={handlePaymentClick}>Pagar con tarjeta de crédito</button>
+      <h1 className={styles.productTitle}>
+        Sceptre Monitor curvo para juegos de 24.5 pulgadas
+      </h1>
+      <p className={styles.productPrice}>$800.000</p>
+      <ProductSlider products={products} />
+      <div className={styles.buttonContainer}>
+        <button className="button" onClick={handlePaymentClick}>
+          Pagar con tarjeta de crédito
+        </button>
+      </div>
 
       {showModal && <Modal onClose={handleModalClose} />}
     </div>

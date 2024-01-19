@@ -1,5 +1,5 @@
-import {useState} from "react";
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
 
 const Modal = ({ onClose }) => {
   const [cardNumber, setCardNumber] = useState("");
@@ -16,39 +16,44 @@ const Modal = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <button onClick={onClose}>Cerrar Modal</button>
+        <button className="button-sinrelleno" onClick={onClose}>
+          X
+        </button>
         <h3>Ingrese los detalles de la tarjeta de crédito</h3>
-        <label>
-          Número de tarjeta: <input
-            type="text"
-            value={cardNumber}
-            onChange={handleCardNumberChange}
-          />
-        </label>
+        <input
+          type="text"
+          value={cardNumber}
+          onChange={handleCardNumberChange}
+          placeholder="Número de tarjeta"
+        />
         {isMasterCard && (
           <Image
-          src="https://mtf.mastercard.co.za/content/dam/public/mastercardcom/mea/za/logos/mc-logo-52.svg"
-          alt="Logo de MasterCard"
-          width={50}
-          height={50}
-        />
+            src="https://mtf.mastercard.co.za/content/dam/public/mastercardcom/mea/za/logos/mc-logo-52.svg"
+            alt="Logo de MasterCard"
+            width={50}
+            height={50}
+          />
         )}
+        <input type="text" placeholder="Número de cuotas" />
+
         <label>
-          Número de cuotas: <input type="text" />
+          Expira en:
+          <input type="text" placeholder="Mes" />
+          <input type="text" placeholder="Año" />
         </label>
-        <label>
-          Mes de vencimiento: <input type="text" />
-        </label>
-        <label>
-          Año de vencimiento: <input type="text" />
-        </label>
-        <label>
-          CVV: <input type="text" />
-        </label>
-        <label>
-          Nombre del titular: <input type="text" />
-        </label>
-        <button>Realizar el pago</button>
+
+        <input type="text" placeholder="CVV" />
+
+        <input type="text" placeholder="Nombre del titular" />
+
+        <select placeholder="CC">
+          <option value="">Tipo de documento</option>
+          <option value="CC">Cédula de Ciudadanía (CC)</option>
+          <option value="TI">Tarjeta de Identidad (TI)</option>
+        </select>
+        <input type="text" placeholder="Numero" />
+
+        <button className="button">Realizar el pago</button>
       </div>
     </div>
   );
