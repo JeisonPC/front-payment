@@ -2,6 +2,10 @@
   --morado: #5F349F;
 }
 
+h3 {
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,7 +15,6 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
 }
 
 header {
@@ -30,6 +33,7 @@ body {
 
 .container {
   padding: 1rem;
+  position: relative;
 }
 
 .top-bar {
@@ -55,6 +59,7 @@ body {
   gap: 8px;
   color: white;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .button-sinrelleno {
@@ -65,13 +70,26 @@ body {
 .modal-overlay {
   position: absolute;
   top: 3rem;
-  background-color: white;
-  padding: 1rem;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal {
   background-color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.container-card {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
 }
 
 
@@ -79,4 +97,55 @@ input {
   border-radius: 8px;
   border: 1px solid #8F8F8F;
   background: #FFF;
+  padding: 12px;
+  width: 100%;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.container-salir {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.container-salir button {
+  font-size: 24px;
+}
+
+.container-salir h3 {
+  font-size: 22px;
+}
+
+select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #8F8F8F;
+}
+
+
+label span {
+  white-space: nowrap;
 }

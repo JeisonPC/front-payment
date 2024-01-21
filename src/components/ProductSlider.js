@@ -28,6 +28,7 @@ const ProductSlider = ({ products }) => {
         {products.map((product) => (
           <div key={product.id} className="productSlide">
             <Image
+              priority={false}
               src={product.image}
               alt="Imagen de producto"
               width={214}

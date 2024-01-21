@@ -7,14 +7,11 @@ function PaymentSummary() {
 
   const handleConfirmPayment = () => {
     setIsProcessing(true);
-    // Simulate payment success or failure
     const isSuccessful = Math.random() > 0.5;
 
     // Handle success or failure based on simulated outcome
     if (isSuccessful) {
-      // Redirect to success page or display success message
     } else {
-      // Display error message
     }
 
     setIsProcessing(false);
